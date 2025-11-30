@@ -1,6 +1,53 @@
-# Angular-Project
+# SfaxStore
 
-A modern e-commerce frontend application built with Angular 19.
+A modern e-commerce frontend application built with Angular 19. This project provides a comprehensive shopping experience with product browsing, cart management, and checkout functionality.
+
+## 🚀 Features
+
+- **Product Catalog**: Browse through a variety of products with detailed information
+- **Shopping Cart**: Add products to your cart and manage quantities
+- **User Authentication**: Login and registration functionality (simulated)
+- **Checkout Process**: Complete purchase flow with address and payment information
+- **Responsive Design**: Optimized for desktop and mobile devices using Tailwind CSS
+- **Payment Success Page**: Confirmation page after successful checkout
+
+## 🛠️ Technology Stack
+
+- **Framework**: Angular 19.x
+- **Styling**: Tailwind CSS 4.x with Flowbite components
+- **State Management**: Angular's built-in services
+- **Routing**: Angular Router
+- **Mock Data**: Simulated product and user data
+
+## 📋 Prerequisites
+
+- Node.js (v18.x or higher)
+- npm (v9.x or higher)
+- Angular CLI (v19.x)
+
+## 🔧 Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/MedAzizAydi080/Angular-Project.git
+   cd Angular-Project
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm start
+   ```
+4. Open your browser and navigate to:
+   ```
+   http://localhost:4200
+   ```
 
 ## 📁 Project Structure
 
@@ -18,6 +65,19 @@ src/
 ├── environments/        # Environment configuration
 ```
 
-## Contributors
+## ⚙️ Available Scripts
 
-- **MedAzizAydi080** (sole contributor)
+- **npm start**: Start the development server
+- **npm run build**: Build the project for production
+- **npm test**: Run unit tests
+- **npm run watch**: Build and watch for changes in development mode
+
+## 📦 Deployment
+
+Build the application for production:
+
+```bash
+npm run build
+```
+
+This will generate optimized static files in the `dist/` directory that can be deployed to any static hosting service.
