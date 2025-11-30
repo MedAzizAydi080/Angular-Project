@@ -65,19 +65,4 @@ src/
 ├── environments/        # Environment configuration
 ```
 
-## ⚙️ Available Scripts
 
-- **npm start**: Start the development server
-- **npm run build**: Build the project for production
-- **npm test**: Run unit tests
-- **npm run watch**: Build and watch for changes in development mode
-
-## 📦 Deployment
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-This will generate optimized static files in the `dist/` directory that can be deployed to any static hosting service.
