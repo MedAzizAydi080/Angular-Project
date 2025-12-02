@@ -53,9 +53,8 @@ export class CheckoutComponent implements OnInit {
       phone: ['', [Validators.required, Validators.pattern(/^[\d\s\-+()]+$/)]],
       address: ['', [Validators.required, Validators.minLength(5)]],
       city: ['', [Validators.required]],
-      state: ['', [Validators.required]],
-      zipCode: ['', [Validators.required, Validators.pattern(/^\d{5}(-\d{4})?$/)]],
-      country: ['United States', [Validators.required]],
+      zipCode: ['', [Validators.required, Validators.pattern(/^\d{4,5}$/)]],
+      country: ['Tunisia', [Validators.required]],
     });
   }
 
@@ -111,7 +110,6 @@ export class CheckoutComponent implements OnInit {
       phone: 'Phone number',
       address: 'Address',
       city: 'City',
-      state: 'State',
       zipCode: 'ZIP code',
       country: 'Country',
     };

@@ -1,6 +1,7 @@
-import { Component, input, OnInit, output } from '@angular/core';
+import { Component, input, OnInit, output, inject } from '@angular/core';
 import { CartProduct } from '../../../shared/models/cart-product';
 import { TndCurrencyPipe } from '../../../shared/pipes/tnd-currency.pipe';
+import { FavoritesService } from '../../../core/services/favorites.service';
 
 @Component({
   selector: 'app-cart-product',
@@ -8,13 +9,21 @@ import { TndCurrencyPipe } from '../../../shared/pipes/tnd-currency.pipe';
   templateUrl: './cart-product.component.html',
 })
 export class CartProductComponent implements OnInit {
+  private favoritesService = inject(FavoritesService);
+  
   cartProduct = input.required<CartProduct>();
   total: number = 0;
+  isFavorite: boolean = false;
 
   updateCartEvent = output<void>();
 
   ngOnInit(): void {
     this.updateTotal();
+    this.isFavorite = this.favoritesService.isFavorite(this.cartProduct().product.id);
+  }
+  
+  toggleFavorite(): void {
+    this.isFavorite = this.favoritesService.toggleFavorite(this.cartProduct().product.id);
   }
 
   updateQantity(num: number) {

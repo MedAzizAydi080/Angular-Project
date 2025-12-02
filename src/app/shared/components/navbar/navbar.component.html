@@ -1,13 +1,13 @@
 <header>
   <nav class="bg-white border-b border-gray-200">
     <div
-      class="max-w-screen-lg flex flex-wrap items-center justify-between mx-auto px-4"
+      class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-6 py-3"
     >
       <a routerLink="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-        <img src="/svg/logo.svg" alt="Logo" class="h-12 w-auto" />
+        <img src="/svg/logo.svg" alt="Logo" class="h-14 w-auto" />
       </a>
-      <div class="flex md:order-2 rtl:space-x-reverse items-center">
-        <div class="relative hidden md:block mr-4">
+      <div class="flex md:order-2 rtl:space-x-reverse items-center gap-2">
+        <div class="relative hidden md:block">
           <div
             class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
           >
@@ -33,7 +33,7 @@
             id="search-navbar"
             [(ngModel)]="searchTerm"
             (keyup.enter)="search()"
-            class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-yellow-400 focus:border-yellow-400"
+            class="block w-56 p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-yellow-400 focus:border-yellow-400"
             [class.pe-8]="searchTerm"
             placeholder="Search..."
           />
@@ -55,7 +55,7 @@
           data-collapse-toggle="navbar-search"
           aria-controls="navbar-search"
           aria-expanded="false"
-          class="md:hidden text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 rounded-lg text-sm p-2.5 me-1"
+          class="md:hidden text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 rounded-lg text-sm p-2.5"
         >
           <svg
             class="w-5 h-5"
@@ -74,50 +74,52 @@
           </svg>
           <span class="sr-only">Search</span>
         </button>
-        <a
-          role="button"
-          class="relative inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
-          routerLink="/favorites"
-          title="Favorites"
-        >
-          <svg
-            class="size-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+        <div class="flex items-center gap-1">
+          <a
+            role="button"
+            class="relative inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+            routerLink="/favorites"
+            title="Favorites"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-            />
-          </svg>
-          @if (favoriteCount() > 0) {
-            <span class="absolute -top-1 -right-1 inline-flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-red-500 rounded-full">
-              {{ favoriteCount() }}
-            </span>
-          }
-        </a>
-        <a
-          role="button"
-          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
-          routerLink="/cart"
-        >
-          <svg
-            fill="currentColor"
-            class="size-5"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 576 512"
+            <svg
+              class="size-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+              />
+            </svg>
+            @if (favoriteCount() > 0) {
+              <span class="absolute -top-1 -right-1 inline-flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-red-500 rounded-full">
+                {{ favoriteCount() }}
+              </span>
+            }
+          </a>
+          <a
+            role="button"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+            routerLink="/cart"
           >
-            <path
-              d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
-            />
-          </svg>
-        </a>
+            <svg
+              fill="currentColor"
+              class="size-5"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 576 512"
+            >
+              <path
+                d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+              />
+            </svg>
+          </a>
+        </div>
         <!-- User Menu -->
         @if (authService.currentUser$ | async; as user) {
-        <div class="relative ml-2">
+        <div class="relative ml-3">
           <button
             (click)="toggleUserMenu()"
             class="flex items-center gap-2 p-2 text-sm text-gray-700 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
@@ -165,16 +167,16 @@
           }
         </div>
         } @else {
-        <div class="hidden md:flex items-center gap-2 ml-2">
+        <div class="hidden md:flex items-center gap-2 ml-3">
           <a
             routerLink="/sign-in"
-            class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-yellow-500"
+            class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-yellow-500"
           >
             Sign in
           </a>
           <a
             routerLink="/sign-up"
-            class="px-3 py-2 text-sm font-medium text-white bg-yellow-400 rounded-lg hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-200"
+            class="px-4 py-2 text-sm font-medium text-white bg-yellow-400 rounded-lg hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-200"
           >
             Sign up
           </a>
@@ -218,7 +220,7 @@
         id="navbar"
       >
         <ul
-          class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white"
+          class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-10 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white"
         >
           <li>
             <a

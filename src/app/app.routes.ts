@@ -9,6 +9,7 @@ import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { FindUsComponent } from './find-us/find-us.component';
+import { ContactComponent } from './contact/contact.component';
 
 export const routes: Routes = [
   {
@@ -50,5 +51,9 @@ export const routes: Routes = [
   {
     path: 'find-us',
     component: FindUsComponent,
+  },
+  {
+    path: 'contact',
+    component: ContactComponent,
   },
 ];

@@ -47,6 +47,10 @@ export class ProductApiService {
   }
 
   private mapApiProductToProduct(apiProduct: ApiProduct): Product {
+    // Generate a random previousPrice (10-40% higher) to simulate discounts
+    const discountPercent = 10 + Math.random() * 30; // 10% to 40%
+    const previousPrice = Math.round(apiProduct.price * (1 + discountPercent / 100) * 100) / 100;
+
     return {
       id: apiProduct.id.toString(),
       name: apiProduct.title,
@@ -54,7 +58,7 @@ export class ProductApiService {
       urlImg: apiProduct.image,
       reviews: apiProduct.rating.count,
       price: apiProduct.price,
-      previousPrice: null, // api
+      previousPrice: previousPrice,
     };
   }
 }

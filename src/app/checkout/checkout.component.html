@@ -69,7 +69,7 @@
                 formControlName="fullName"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-yellow-400 focus:border-yellow-400 block w-full p-2.5"
                 [class.border-red-500]="isFieldInvalid('fullName')"
-                placeholder="John Doe"
+                placeholder="Aziz Aydi"
               />
               @if (isFieldInvalid('fullName')) {
               <p class="mt-1 text-sm text-red-500">{{ getFieldError('fullName') }}</p>
@@ -88,7 +88,7 @@
                   formControlName="email"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-yellow-400 focus:border-yellow-400 block w-full p-2.5"
                   [class.border-red-500]="isFieldInvalid('email')"
-                  placeholder="john@example.com"
+                  placeholder="aziz@example.com"
                 />
                 @if (isFieldInvalid('email')) {
                 <p class="mt-1 text-sm text-red-500">{{ getFieldError('email') }}</p>
@@ -104,7 +104,7 @@
                   formControlName="phone"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-yellow-400 focus:border-yellow-400 block w-full p-2.5"
                   [class.border-red-500]="isFieldInvalid('phone')"
-                  placeholder="+1 (555) 123-4567"
+                  placeholder="+216 XX XXX XXX"
                 />
                 @if (isFieldInvalid('phone')) {
                 <p class="mt-1 text-sm text-red-500">{{ getFieldError('phone') }}</p>
@@ -123,45 +123,53 @@
                 formControlName="address"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-yellow-400 focus:border-yellow-400 block w-full p-2.5"
                 [class.border-red-500]="isFieldInvalid('address')"
-                placeholder="123 Main Street, Apt 4B"
+                placeholder="Rue Habib Bourguiba, Apt 12"
               />
               @if (isFieldInvalid('address')) {
               <p class="mt-1 text-sm text-red-500">{{ getFieldError('address') }}</p>
               }
             </div>
 
-            <!-- City, State, ZIP -->
-            <div class="grid grid-cols-1 gap-6 sm:grid-cols-3">
+            <!-- City & ZIP -->
+            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
               <div>
                 <label for="city" class="block mb-2 text-sm font-medium text-gray-900">
                   City <span class="text-red-500">*</span>
                 </label>
-                <input
-                  type="text"
+                <select
                   id="city"
                   formControlName="city"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-yellow-400 focus:border-yellow-400 block w-full p-2.5"
                   [class.border-red-500]="isFieldInvalid('city')"
-                  placeholder="New York"
-                />
+                >
+                  <option value="">Select a city</option>
+                  <option value="Ariana">Ariana</option>
+                  <option value="Béja">Béja</option>
+                  <option value="Ben Arous">Ben Arous</option>
+                  <option value="Bizerte">Bizerte</option>
+                  <option value="Gabès">Gabès</option>
+                  <option value="Gafsa">Gafsa</option>
+                  <option value="Jendouba">Jendouba</option>
+                  <option value="Kairouan">Kairouan</option>
+                  <option value="Kasserine">Kasserine</option>
+                  <option value="Kebili">Kebili</option>
+                  <option value="Kef">Kef</option>
+                  <option value="Mahdia">Mahdia</option>
+                  <option value="Manouba">Manouba</option>
+                  <option value="Medenine">Medenine</option>
+                  <option value="Monastir">Monastir</option>
+                  <option value="Nabeul">Nabeul</option>
+                  <option value="Sfax">Sfax</option>
+                  <option value="Sidi Bouzid">Sidi Bouzid</option>
+                  <option value="Siliana">Siliana</option>
+                  <option value="Sousse">Sousse</option>
+                  <option value="Tataouine">Tataouine</option>
+                  <option value="Tozeur">Tozeur</option>
+                  <option value="Tunis">Tunis</option>
+                  <option value="Zaghouan">Zaghouan</option>
+                </select>
                 @if (isFieldInvalid('city')) {
                 <p class="mt-1 text-sm text-red-500">{{ getFieldError('city') }}</p>
-                }
-              </div>
-              <div>
-                <label for="state" class="block mb-2 text-sm font-medium text-gray-900">
-                  State <span class="text-red-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="state"
-                  formControlName="state"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-yellow-400 focus:border-yellow-400 block w-full p-2.5"
-                  [class.border-red-500]="isFieldInvalid('state')"
-                  placeholder="NY"
-                />
-                @if (isFieldInvalid('state')) {
-                <p class="mt-1 text-sm text-red-500">{{ getFieldError('state') }}</p>
                 }
               </div>
               <div>
@@ -174,7 +182,7 @@
                   formControlName="zipCode"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-yellow-400 focus:border-yellow-400 block w-full p-2.5"
                   [class.border-red-500]="isFieldInvalid('zipCode')"
-                  placeholder="10001"
+                  placeholder="3000"
                 />
                 @if (isFieldInvalid('zipCode')) {
                 <p class="mt-1 text-sm text-red-500">{{ getFieldError('zipCode') }}</p>
@@ -187,18 +195,14 @@
               <label for="country" class="block mb-2 text-sm font-medium text-gray-900">
                 Country <span class="text-red-500">*</span>
               </label>
-              <select
+              <input
+                type="text"
                 id="country"
                 formControlName="country"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-yellow-400 focus:border-yellow-400 block w-full p-2.5"
-              >
-                <option value="United States">United States</option>
-                <option value="Canada">Canada</option>
-                <option value="United Kingdom">United Kingdom</option>
-                <option value="Australia">Australia</option>
-                <option value="Germany">Germany</option>
-                <option value="France">France</option>
-              </select>
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-yellow-400 focus:border-yellow-400 block w-full p-2.5 cursor-not-allowed"
+                value="Tunisia"
+                readonly
+              />
             </div>
 
             <div class="flex justify-between pt-4">
@@ -239,7 +243,7 @@
                 <p class="text-sm text-gray-600">{{ state.shippingInfo.fullName }}</p>
                 <p class="text-sm text-gray-600">{{ state.shippingInfo.address }}</p>
                 <p class="text-sm text-gray-600">
-                  {{ state.shippingInfo.city }}, {{ state.shippingInfo.state }} {{ state.shippingInfo.zipCode }}
+                  {{ state.shippingInfo.city }}, {{ state.shippingInfo.zipCode }}
                 </p>
                 <p class="text-sm text-gray-600">{{ state.shippingInfo.country }}</p>
               </div>
